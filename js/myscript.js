@@ -11,44 +11,54 @@ const containerNumUser = document.getElementById("containernumuser");
 
 const containerCheck = document.getElementById("indovinato");
 
+const buttonGen = document.getElementById("btngen");
+
 /* creiamo un'array vuota per inserirci i numeri che verranno generati dal pc */
 
 const arrNumPc = [];
 
 /* creiamo un ciclo per generare i numeri casuali che non possono essere duplicati */
 
-while (arrNumPc.length < 5){
+buttonGen.addEventListener("click", 
 
-    let numPc = Math.floor(Math.random() * 99) + 1;
+    function(){
 
-    p = arrNumPc.includes(numPc);
+        while (arrNumPc.length < 5){
 
-    if (!p){
-
-        arrNumPc.push(numPc)
+            let numPc = Math.floor(Math.random() * 99) + 1;
+        
+            p = arrNumPc.includes(numPc);
+        
+            if (!p){
+        
+                arrNumPc.push(numPc)
+        
+            }
+        
+        }
+        console.log(arrNumPc);
+        
+        /* andiamo a stampare in pagina 5 numeri casuali generati dal computer */
+        
+        arrNumPc.forEach((elementPc) => {
+        
+            containerNumPc.innerHTML += `
+            <div class="container">
+        
+                <span>${elementPc}</span>
+        
+            </div>
+            `
+        
+        });
 
     }
 
-}
-console.log(arrNumPc);
-
-/* andiamo a stampare in pagina 5 numeri casuali generati dal computer */
-
-arrNumPc.forEach((elementPc) => {
-
-    containerNumPc.innerHTML += `
-    <div class="container">
-
-        <span>${elementPc}</span>
-
-    </div>
-    `
-
-});
+)
 
 /* andiamo a creare una funzione che dopo 30 secondi fa sparire il div */
 
-setTimeout(pcNumFunction, 3000)
+setTimeout(pcNumFunction, 30000)
 
 function pcNumFunction() {
 
@@ -60,7 +70,7 @@ function pcNumFunction() {
 
 const arrNumUser = [];
 
-setTimeout(promptRequest, 4000)
+setTimeout(promptRequest, 31000)
 
 function promptRequest(){
     for (let i = 0; i < 5; i++){
