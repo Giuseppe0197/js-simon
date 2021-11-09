@@ -14,6 +14,12 @@ h1 {
     color: rgb(0, 4, 250);
 }
 
+h2 {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(0, 4, 250);
+}
+
 #containernumpc{
     height: 100px;
     width: 25%;
@@ -40,5 +46,11 @@ h1 {
 #containernumuser{
     height: 100px;
     width: 25%;
-    margin: 100px auto 0;
+    margin: 10px auto 0;
+}
+
+#indovinato{
+    height: 100px;
+    text-align: center;
+    margin: 50px auto 0;
 }

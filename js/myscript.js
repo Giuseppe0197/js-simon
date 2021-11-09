@@ -9,6 +9,8 @@ const containerNumPc = document.getElementById("containernumpc");
 
 const containerNumUser = document.getElementById("containernumuser");
 
+const containerCheck = document.getElementById("indovinato");
+
 /* creiamo un'array vuota per inserirci i numeri che verranno generati dal pc */
 
 const arrNumPc = [];
@@ -46,7 +48,7 @@ arrNumPc.forEach((elementPc) => {
 
 /* andiamo a creare una funzione che dopo 30 secondi fa sparire il div */
 
-setTimeout(pcNumFunction, 2000)
+setTimeout(pcNumFunction, 3000)
 
 function pcNumFunction() {
 
@@ -58,42 +60,27 @@ function pcNumFunction() {
 
 const arrNumUser = [];
 
-for (let i = 0; i < 5; i++){
+setTimeout(promptRequest, 4000)
 
-    setTimeout(promptRequest, 3000)
-
-    function promptRequest(){
-
+function promptRequest(){
+    for (let i = 0; i < 5; i++){
         const numRequest = parseInt(prompt("inserisci il numero generato precendentemente"));
+
+        containerCheck.innerHTML = `<h2>Hai indovinato:</h2>`
 
         /* se i numeri generati sono uguali a quelli del pc allora li aggiungiamo in pagina e controlliamo quanti ne ha indovinati */
 
         if (numRequest === arrNumPc[i]){
+            arrNumUser.push(numRequest);
 
-            arrNumUser.push(numRequest)
+            containerNumUser.innerHTML += `
 
-        }
+            <div class="container">
 
+                <span>${numRequest}</span>
+
+            </div>
+            `
+        };
     }
-
 }
-
-console.log(arrNumUser);
-
-/* andiamo a stampare l'array con i numeri che ha indovinato il giocatore */
-
-arrNumUser.forEach((elementUser) => {
-
-    containerNumUser.innerHTML += `
-
-    <h1>Hai indovinato:</h1>
-
-    <div class="container">
-
-        <span>${elementUser}</span>
-
-    </div>
-
-    `
-
-})
