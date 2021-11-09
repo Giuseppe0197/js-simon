@@ -3,3 +3,42 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: rgb(83, 188, 248);
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(0, 4, 250);
+}
+
+#containernumpc{
+    height: 100px;
+    width: 25%;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    width: calc(100% / 5);
+    height: 100px;
+    float: left;
+    background-color: blue;
+    text-align: center;
+}
+
+.container span {
+    line-height: 100px;
+    vertical-align: middle;
+    font-size: 35px;
+    color: white;
+}
+
+#containernumuser{
+    height: 100px;
+    width: 25%;
+    margin: 100px auto 0;
+}
