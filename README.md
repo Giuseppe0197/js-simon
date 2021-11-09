@@ -1,0 +1,2 @@
+# js-simon
+numeri indovinati
