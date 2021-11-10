@@ -58,7 +58,7 @@ buttonGen.addEventListener("click",
 
 /* andiamo a creare una funzione che dopo 30 secondi fa sparire il div */
 
-setTimeout(pcNumFunction, 30000)
+setTimeout(pcNumFunction, 3000)
 
 function pcNumFunction() {
 
@@ -70,17 +70,20 @@ function pcNumFunction() {
 
 const arrNumUser = [];
 
-setTimeout(promptRequest, 31000)
+setTimeout(promptRequest, 3100)
 
 function promptRequest(){
+
     for (let i = 0; i < 5; i++){
+
         const numRequest = parseInt(prompt("inserisci il numero generato precendentemente"));
 
         containerCheck.innerHTML = `<h2>Hai indovinato:</h2>`
 
         /* se i numeri generati sono uguali a quelli del pc allora li aggiungiamo in pagina e controlliamo quanti ne ha indovinati */
 
-        if (numRequest === arrNumPc[i]){
+        if (arrNumPc.includes(numRequest)){
+            
             arrNumUser.push(numRequest);
 
             containerNumUser.innerHTML += `
